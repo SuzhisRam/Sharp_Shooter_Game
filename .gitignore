@@ -1,0 +1,83 @@
+# =========================
+# Unity generated folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+
+# =========================
+# Unity cache
+# =========================
+MemoryCaptures/
+Recordings/
+
+# =========================
+# Asset meta data (IMPORTANT)
+# =========================
+# Mantener .meta files SIEMPRE
+!*.meta
+
+# =========================
+# Visual Studio / VS Code
+# =========================
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# VS Code
+.vscode/
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Crash reports
+# =========================
+sysinfo.txt
+
+# =========================
+# Builds (optional)
+# =========================
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.x86
+*.x86_64
+
+# =========================
+# Addressables
+# =========================
+/Assets/AddressableAssetsData/*/*.bin*
+
+# =========================
+# Gradle (Android)
+# =========================
+.gradle/
+
+# =========================
+# Rider / JetBrains
+# =========================
+.idea/
+*.sln.iml
+
+# =========================
+# Logs adicionales
+# =========================
+*.log
