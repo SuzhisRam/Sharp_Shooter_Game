@@ -1,8 +1,8 @@
 # Sharp Shooter
 
-Sharp Shooter is a first-person shooter prototype built in Unity as part of my learning path through the Udemy course [Complete C# Unity 3D Game Development in Unity 6](https://www.udemy.com/course/unitycourse2/).
+Sharp Shooter is a first-person shooter prototype built in Unity. This repository reflects the work I implemented from the **Sharp Shooter** section of the Udemy course [Complete C# Unity 3D Game Development in Unity 6](https://www.udemy.com/course/unitycourse2/).
 
-The project focuses on building core FPS systems in C# and Unity: player movement, weapon handling, pickups, enemy behavior, health, UI feedback, camera effects, and reusable gameplay components.
+The project focuses on a compact FPS gameplay loop: moving through a 3D level, switching weapons, collecting pickups, shooting enemies with raycasts, managing ammo, using weapon zoom, taking damage, and surviving enemy spawns.
 
 ## Preview
 
@@ -10,35 +10,53 @@ The project focuses on building core FPS systems in C# and Unity: player movemen
 
 ## Portfolio Summary
 
-This project demonstrates my ability to build and organize gameplay systems in Unity using C#. It includes a playable FPS loop where the player can move through a 3D level, collect weapons and ammo, shoot enemies, take damage, and interact with gameplay objects built from prefabs and configurable data assets.
+This project demonstrates my ability to implement gameplay systems in Unity using C# and the component-based workflow. The code and scene setup focus specifically on FPS mechanics from the Sharp Shooter course section, including weapon behavior, pickups, enemy damage, player health, UI feedback, VFX, and camera effects.
 
-I am using this project as a portfolio reference to show practical experience with Unity gameplay programming, component-based architecture, input handling, ScriptableObjects, enemy AI navigation, visual feedback, and scene setup.
+I use this project as a portfolio reference because it shows practical Unity development skills in a playable prototype rather than only isolated exercises.
+
+## Sharp Shooter Section Scope
+
+This repository is based on the **Sharp Shooter** section of the course. The implemented topics include:
+
+- Machine gun setup and automatic fire behavior.
+- Weapon pickups and runtime weapon switching.
+- Sniper rifle setup with zoom functionality.
+- Base pickup behavior using inheritance.
+- Raycast shooting and raycast overload usage.
+- Ammo management and ammo pickups.
+- Separate weapon viewport/camera setup.
+- Gun recoil and camera impulse feedback.
+- Robot explosion visual effects.
+- Explosion radius visualization with `OnDrawGizmos`.
+- Area damage using `Physics.OverlapSphere`.
+- Death camera transition with Cinemachine.
+- Player shield UI.
+- Enemy spawn gate behavior.
 
 ## What I Learned
 
-- Built gameplay logic using C# scripts, Unity components, serialized fields, prefabs, and scene objects.
-- Implemented a first-person controller using Unity Starter Assets and the Unity Input System.
-- Created a weapon system that supports multiple weapons, fire rates, ammo limits, raycast shooting, hit effects, and weapon switching.
-- Used `ScriptableObject` assets to separate weapon data from gameplay logic, making weapons easier to tune and extend.
-- Integrated Cinemachine for player camera behavior, zoom, recoil impulse, and death camera transitions.
-- Created pickup systems using inheritance, trigger colliders, and reusable base classes.
-- Implemented enemy behavior with `NavMeshAgent`, allowing enemies to chase the player through the level.
-- Built player and enemy health systems with damage, destruction, explosion effects, and UI updates.
-- Worked with Unity UI and TextMesh Pro to display ammo and player shield status.
-- Organized project assets into clear folders for scripts, prefabs, scenes, materials, settings, animations, and ScriptableObjects.
-- Used Unity packages such as Universal Render Pipeline, AI Navigation, Cinemachine, Input System, ProBuilder, and TextMesh Pro.
-- Practiced version-control-friendly Unity project setup with a `.gitignore` that excludes generated folders while keeping required `.meta` files.
+- How to structure Unity gameplay features through small, focused C# components.
+- How to expose gameplay values through serialized fields and `ScriptableObject` assets.
+- How to create a reusable weapon system with configurable damage, fire rate, magazine size, zoom, and automatic fire.
+- How to instantiate and destroy prefabs at runtime for weapons, hit effects, explosions, pickups, and enemies.
+- How to use raycasting for FPS shooting and apply damage based on hit results.
+- How to build a pickup architecture using inheritance and trigger colliders.
+- How to update UI elements for ammo and player shield state.
+- How to use Cinemachine for zoom, camera shake/recoil, and death camera transitions.
+- How to use Unity physics queries such as `Physics.Raycast` and `Physics.OverlapSphere`.
+- How to use NavMesh-based enemy movement and spawn enemies while the player is alive.
+- How to organize Unity project files for scripts, prefabs, scenes, materials, settings, animations, and data assets.
 
 ## Features
 
 - First-person movement, camera look, jumping, sprinting, shooting, and zooming.
 - Multiple weapons: pistol, machine gun, and sniper rifle.
-- Configurable weapon stats such as damage, fire rate, zoom, automatic fire, and magazine size.
+- Configurable weapon stats through `WeaponSO` assets.
 - Ammo pickups and weapon pickups.
-- Enemy spawners that continue generating enemies while the player is alive.
-- Enemy chase behavior using Unity NavMesh.
+- Enemy spawners that generate enemies while the player is alive.
+- Enemy pursuit behavior using Unity NavMesh.
 - Player shield UI and death camera behavior.
-- Particle effects for muzzle flashes, bullet impacts, and explosions.
+- Muzzle flash, hit VFX, explosion VFX, and recoil feedback.
 - Main playable scene included in Unity build settings.
 
 ## Technologies
@@ -54,19 +72,19 @@ I am using this project as a portfolio reference to show practical experience wi
 
 ## Course Reference
 
-This project was developed while following:
+This project was developed while following the **Sharp Shooter** section of:
 
 [Complete C# Unity 3D Game Development in Unity 6](https://www.udemy.com/course/unitycourse2/)  
 Created by Rick Davidson, GameDev.tv Team, and Stephen Hubbard.
 
-The course covers C# fundamentals, Unity workflows, gameplay mechanics, player movement, collisions, enemy AI, raycasting, weapon switching, world building, and project-based game development. This repository reflects the FPS section and the systems I implemented while applying those concepts.
+This repository does not represent the full course. It focuses on the FPS systems and gameplay mechanics implemented during the Sharp Shooter section.
 
 ## How to Open the Project
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/sharp-shooter.git
+git clone https://github.com/SuzhisRam/Sharp_Shooter_Game.git
 ```
 
 2. Open Unity Hub.
@@ -112,6 +130,7 @@ Assets/
   ScriptableObjects/   Weapon configuration assets
   Scripts/             Core gameplay scripts
   Settings/            Input, render pipeline, and project settings
+Images/                README preview images
 Packages/              Unity package dependencies
 ProjectSettings/       Unity project configuration
 ```
@@ -137,6 +156,7 @@ The repository includes a Unity-focused `.gitignore`. Generated folders such as 
 Recommended files and folders to include:
 
 - `Assets/`
+- `Images/`
 - `Packages/`
 - `ProjectSettings/`
 - `.gitignore`
@@ -152,4 +172,4 @@ Do not commit:
 
 ## Status
 
-Playable learning project with a functional FPS gameplay loop, reusable weapon data, enemy AI, pickups, UI feedback, and core player combat systems.
+Playable learning project focused on the Sharp Shooter FPS section, with weapon switching, ammo, pickups, raycast shooting, enemy spawning, explosions, shield UI, and camera feedback.
