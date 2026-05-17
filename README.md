@@ -32,6 +32,8 @@ This repository is based on the **Sharp Shooter** section of the course. The imp
 - Death camera transition with Cinemachine.
 - Player shield UI.
 - Enemy spawn gate behavior.
+- Turret enemy setup with projectile-based attacks.
+- Game over, restart, quit, enemy counter, and win-state UI.
 
 ## What I Learned
 
@@ -45,6 +47,12 @@ This repository is based on the **Sharp Shooter** section of the course. The imp
 - How to use Cinemachine for zoom, camera shake/recoil, and death camera transitions.
 - How to use Unity physics queries such as `Physics.Raycast` and `Physics.OverlapSphere`.
 - How to use NavMesh-based enemy movement and spawn enemies while the player is alive.
+- How to implement turret enemies that track the player and fire projectiles on a timed coroutine.
+- How to initialize projectile damage, move projectiles with a Rigidbody, detect trigger collisions, and spawn impact VFX.
+- How to use `GetComponentInParent` when applying damage to enemies with nested colliders.
+- How to track enemy count through a central `GameManager` and display win-state UI.
+- How to reload the active scene with `SceneManager` and expose restart/quit actions for UI buttons.
+- How to manage cursor lock state when entering gameplay and when showing the game-over screen.
 - How to organize Unity project files for scripts, prefabs, scenes, materials, settings, animations, and data assets.
 
 ## Features
@@ -55,8 +63,12 @@ This repository is based on the **Sharp Shooter** section of the course. The imp
 - Ammo pickups and weapon pickups.
 - Enemy spawners that generate enemies while the player is alive.
 - Enemy pursuit behavior using Unity NavMesh.
-- Player shield UI and death camera behavior.
-- Muzzle flash, hit VFX, explosion VFX, and recoil feedback.
+- Turret enemies that rotate toward the player and fire projectile prefabs.
+- Projectile damage, collision handling, and projectile impact VFX.
+- Enemy counter and win-state UI.
+- Player shield UI, game-over UI, and death camera behavior.
+- Restart and quit actions managed through a central game manager.
+- Muzzle flash, hit VFX, projectile hit VFX, explosion VFX, and recoil feedback.
 - Main playable scene included in Unity build settings.
 
 ## Technologies
@@ -143,11 +155,14 @@ ProjectSettings/       Unity project configuration
 - `PlayerHealth.cs`: manages player health, shield UI, and death camera behavior.
 - `EnemyHealth.cs`: manages enemy health and destruction.
 - `Duck.cs`: controls enemy pursuit behavior using NavMesh.
+- `Turret.cs`: rotates a turret head toward the player and fires projectiles on a timer.
+- `Projectile.cs`: moves turret shots forward, applies player damage, and spawns impact VFX.
 - `SpawnGate.cs`: spawns enemies while the player is alive.
 - `Pickup.cs`: base class for collectible items.
 - `AmmoPickup.cs`: adds ammo to the active weapon.
 - `WeaponPickup.cs`: changes the active weapon.
 - `Explosion.cs`: applies area damage to the player.
+- `GameManager.cs`: tracks remaining enemies, displays win UI, and exposes restart/quit actions.
 
 ## GitHub Notes
 
@@ -172,4 +187,4 @@ Do not commit:
 
 ## Status
 
-Playable learning project focused on the Sharp Shooter FPS section, with weapon switching, ammo, pickups, raycast shooting, enemy spawning, explosions, shield UI, and camera feedback.
+Playable learning project focused on the Sharp Shooter FPS section, with weapon switching, ammo, pickups, raycast shooting, enemy spawning, turret projectiles, explosions, enemy counter/win UI, game-over flow, shield UI, and camera feedback.
